@@ -1,28 +1,48 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="nav">
+      <router-link to="/">Home</router-link>|
+      <router-link to="/Q2">Question2</router-link>
+    </div>
+    <router-view />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import Question1 from "./components/Question1.vue";
+  import Question2 from "./components/Question2.vue";
 
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
+  export default {
+    name: "app",
+    components: {
+      Question1,
+      Question2
+    }
+  };
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&subset=chinese-traditional");
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background-color: #ccc;
+    font-family: "Noto Sans TC", sans-serif;
+  }
+  #app {
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 10px;
+  }
+  .nav {
+    width: 300px;
+    margin: auto;
+  }
+  .nav a {
+    margin-right: 10px;
+    text-decoration: underline;
+  }
 </style>
